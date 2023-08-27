@@ -3,7 +3,8 @@ import { RiProductHuntLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import "./Home.scss";
 import heroImg from "../../assets/inv-img.png";
-// import {}
+import { ShowOnLogin, ShowOnLogout } from "../../components/protect/HiddenLinks";
+
 const Home = () => {
   return (
     <div className="home">
@@ -12,21 +13,25 @@ const Home = () => {
           <RiProductHuntLine size={35} />
         </div>
         <ul className="home-links">
-          <li>
-            <button className="--btn --btn-primary">
+          <ShowOnLogout>
+            <li>
               <Link to="/register">Register</Link>
-            </button>
-          </li>
-          <li>
-            <button className="--btn --btn-primary">
-              <Link to="/login">Login</Link>
-            </button>
-          </li>
-          <li>
-            <button className="--btn --btn-primary">
-              <Link to="/dashboard">Dashboard</Link>
-            </button>
-          </li>
+            </li>
+          </ShowOnLogout>
+          <ShowOnLogout>
+            <li>
+              <button className="--btn --btn-primary">
+                <Link to="/login">Login</Link>
+              </button>
+            </li>
+          </ShowOnLogout>
+          <ShowOnLogin>
+            <li>
+              <button className="--btn --btn-primary">
+                <Link to="/dashboard">Dashboard</Link>
+              </button>
+            </li>
+          </ShowOnLogin>
         </ul>
       </nav>
       {/* Hero section ends */}
@@ -37,9 +42,9 @@ const Home = () => {
             Inventory system to control and manage proucts in the warehouse in
             real timeand integrated to make it easier to develop your business.
           </p>
-          <div className="hero-buttons" >
-            <button className="--btn --btn-secondary" >
-              <Link to="/dashboard" >Free trial 1 Month</Link>
+          <div className="hero-buttons">
+            <button className="--btn --btn-secondary">
+              <Link to="/dashboard">Free trial 1 Month</Link>
             </button>
           </div>
           <div className="--flex-start">

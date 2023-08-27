@@ -96,7 +96,7 @@ const updateProduct = asyncHandler(async (req, res) => {
   //   console.log(req.body)
   //   console.log(name)
   const { id } = req.params;
-  const product = await Product.findById(req.params.id);
+  const product = await Product.findById(id);
 
   // If product does not exists
   if (!product) {
@@ -109,10 +109,10 @@ const updateProduct = asyncHandler(async (req, res) => {
     throw new Error("User not authorized");
   }
   //   Validateion
-  if (!name || !sku || !category || !price || !quantity || !description) {
-    res.status(400);
-    throw new Error("Please fill in all fields");
-  }
+  // if (!name || !category || !price || !quantity || !description) {
+  //   res.status(400);
+  //   throw new Error("Please fill in all fields");
+  // }
 
   //   Handle Image upload
   let fileData = {};

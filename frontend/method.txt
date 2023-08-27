@@ -1,0 +1,50 @@
+1)
+redux -> store.js -> features -> auth -> authSlice.js ->
+
+2)
+in index.js -> provider
+
+3)
+All Pages login, reset, ...
+
+4)
+Card components and other parts
+
+5)
+authSlice code full
+
+6)
+services -> auth services -> all http request from backend
+
+7)
+import axios in app.js
+
+8)
+custom hook
+
+9)
+product slice
+
+10)
+productService -> AddProduct -> ProductForm
+
+11)
+fetch product
+
+12)
+productList -> productSummary
+
+13)
+Search component
+
+14)
+filterSlice
+
+15)
+${BACKEND_URL}/api/product
+
+16)
+InfoBox
+
+17)
+productSlice for total store value

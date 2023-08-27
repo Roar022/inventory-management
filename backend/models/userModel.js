@@ -59,11 +59,16 @@ const userSchema = mongoose.Schema(
 );
 
 // before sending to mongo DB
+// pre :- mongoose hook, called before a document is saved to the database.
 userSchema.pre("save", async function (next) {
+  // check the password property has been modified or not if not then return next() :- continue 
+  // saving the document otherwise hashed the password
   if (!this.isModified("password")) {
     return next();
   }
+  // generate random string
   const salt = await bcrypt.genSalt(10);
+  // 
   const hashedPassword = await bcrypt.hash(this.password, salt);
   this.password = hashedPassword;
 });
